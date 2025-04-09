@@ -1,4 +1,4 @@
-const express = require("express"); // 👈 Μάλλον λείπει από την αρχή
+const express = require("express"); 
 const cors = require("cors");
 
 const authRoutes = require("./routes/authRoutes");

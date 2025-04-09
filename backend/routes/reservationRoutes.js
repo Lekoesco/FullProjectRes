@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require("../config/db");
 const verifyToken = require("../middleware/verifyToken");
 
-// 🔒 Προστατευμένο endpoint - Εμφάνιση κρατήσεων του χρήστη
+//  Προστατευμένο endpoint - Εμφάνιση κρατήσεων του χρήστη
 router.get("/user/reservations", verifyToken, (req, res) => {
   const userId = req.user.user_id;
 
@@ -26,7 +26,7 @@ router.get("/user/reservations", verifyToken, (req, res) => {
   });
 });
 
-// 🔒 Προστατευμένο endpoint - Δημιουργία νέας κράτησης
+//  Προστατευμένο endpoint - Δημιουργία νέας κράτησης
 router.post("/reservations", verifyToken, (req, res) => {
   const { restaurant_id, date, time, people_count } = req.body;
   const user_id = req.user.user_id;
@@ -45,7 +45,7 @@ router.post("/reservations", verifyToken, (req, res) => {
     res.status(201).json({ message: "Reservation created successfully" });
   });
 });
-// 🔥 Διαγραφή κράτησης
+//  Διαγραφή κράτησης
 router.delete("/reservations/:id", verifyToken, (req, res) => {
   const reservationId = req.params.id;
   const userId = req.user.user_id;
@@ -72,7 +72,7 @@ router.get("/restaurants", async (req, res) => {
     res.status(500).json({ error: "Database error" });
   }
 });
-// 🔒 Επεξεργασία κράτησης
+//  Επεξεργασία κράτησης
 router.put("/reservations/:id", verifyToken, (req, res) => {
   const { id } = req.params;
   const { date, time, people_count } = req.body;

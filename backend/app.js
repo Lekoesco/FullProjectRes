@@ -7,7 +7,7 @@ const reservationRoutes = require("./routes/reservationRoutes");
 
 const app = express();
 
-// ✅ Middleware ΠΡΕΠΕΙ να μπει πριν τα routes
+
 app.use(cors());
 app.use(express.json());
 

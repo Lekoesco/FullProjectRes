@@ -1,0 +1,4 @@
+cd desktop/FullProjectRes/backend npm run dev
+
+
+cd desktop/FullProjectRes/frontend npm start		
